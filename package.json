@@ -1,6 +1,6 @@
 {
   "name": "hubot-squiddock",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": {
 	"name": "Hubot Flowdock Adapter with Squidbot Alterations",
 	"url": "https://www.adventuresquad.org/squidbot"
