@@ -1,57 +1,61 @@
 {
-  "name": "hubot-flowdock",
-  "version": "0.7.6",
+  "name": "squidbot-flowdock",
+  "version": "0.0.1",
   "author": {
-    "name": "Flowdock",
-    "url": "https://www.flowdock.com/"
+	"name": "Squidbot Flowdock Adapter",
+	"url": "https://www.adventuresquad.org/squidbot"
   },
   "contributors": [
-    {
-      "name": "Arttu Tervo",
-      "email": "arttu.tervo@gmail.com"
-    },
-    {
-      "name": "Ville Lautanala",
-      "email": "lautis@gmail.com"
-    },
-    {
-      "name": "Antti Pitkanen",
-      "email": "apitkane@gmail.com"
-    },
-    {
-      "name": "Otto Vehvilainen",
-      "email": "vehvis@flowdock.com"
-    }
+	{
+	  "name": "Arttu Tervo",
+	  "email": "arttu.tervo@gmail.com"
+	},
+	{
+	  "name": "Ville Lautanala",
+	  "email": "lautis@gmail.com"
+	},
+	{
+	  "name": "Antti Pitkanen",
+	  "email": "apitkane@gmail.com"
+	},
+	{
+	  "name": "Otto Vehvilainen",
+	  "email": "vehvis@flowdock.com"
+	},
+	{
+	  "name": "June Tate-Gans",
+	  "email": "june@theonelab.com"
+	}
   ],
   "keywords": [
-    "hubot",
-    "flowdock",
-    "adapter"
+	"hubot",
+	"flowdock",
+	"adapter",
+	"squidbot"
   ],
-  "description": "A Flowdock adapter for hubot",
+  "description": "A Flowdock adapter for hubot, forked from the original and specially modified for the Adventure Squad",
   "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/mit-license.php"
-    }
+	{
+	  "type": "MIT",
+	  "url": "http://opensource.org/licenses/mit-license.php"
+	}
   ],
   "repository": {
-    "type": "git",
-    "url": "http://github.com/flowdock/hubot-flowdock.git"
+	"type": "git",
+	"url": "http://github.com/jtgans/squidbot-flowdock.git"
   },
   "bugs": {
-    "url": "https://github.com/flowdock/hubot-flowdock/issues",
-    "email": "team@flowdock.com"
+	"url": "https://github.com/jtgans/squidbot-flowdock/issues",
   },
   "dependencies": {
-    "flowdock": "^0.9.0",
-    "parent-require": "^1.0.0"
+	"flowdock": "^0.9.0",
+	"parent-require": "^1.0.0"
   },
   "devDependencies": {
-    "coffee-script": ">=1.2.0"
+	"coffee-script": ">=1.2.0"
   },
   "main": "./src/flowdock",
   "engines": {
-    "node": ">=0.4.7"
+	"node": ">=0.4.7"
   }
 }
