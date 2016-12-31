@@ -97,7 +97,7 @@ class Squiddock extends Adapter
     ":" + String(@robot.name) + ":"
 
   fromMe: (message) ->
-    cookieCheck = new RegExp(@myCookie)
+    cookieCheck = new RegExp(@myCookie())
     cookieCheck.test message
 
   reconnect: (reason) ->
