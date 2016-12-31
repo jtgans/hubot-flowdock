@@ -5,7 +5,7 @@ catch
   prequire = require 'parent-require'
   {Adapter, TextMessage} = prequire 'hubot'
 
-class Flowdock extends Adapter
+class Squiddock extends Adapter
 
   constructor: ->
     super
@@ -219,4 +219,4 @@ class Flowdock extends Adapter
       @connect()
 
 exports.use = (robot) ->
-  new Flowdock robot
+  new Squiddock robot

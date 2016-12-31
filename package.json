@@ -1,8 +1,8 @@
 {
-  "name": "squidbot-flowdock",
+  "name": "hubot-squiddock",
   "version": "0.0.1",
   "author": {
-	"name": "Squidbot Flowdock Adapter",
+	"name": "Hubot Flowdock Adapter with Squidbot Alterations",
 	"url": "https://www.adventuresquad.org/squidbot"
   },
   "contributors": [
@@ -42,10 +42,10 @@
   ],
   "repository": {
 	"type": "git",
-	"url": "http://github.com/jtgans/squidbot-flowdock.git"
+	"url": "http://github.com/jtgans/hubot-squiddock.git"
   },
   "bugs": {
-	"url": "https://github.com/jtgans/squidbot-flowdock/issues"
+	"url": "https://github.com/jtgans/hubot-squiddock/issues"
   },
   "dependencies": {
 	"flowdock": "^0.9.0",
@@ -54,7 +54,7 @@
   "devDependencies": {
 	"coffee-script": ">=1.2.0"
   },
-  "main": "./src/flowdock",
+  "main": "./src/squiddock",
   "engines": {
 	"node": ">=0.4.7"
   }
