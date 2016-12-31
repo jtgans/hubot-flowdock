@@ -23,9 +23,9 @@ class Squiddock extends Adapter
     self = @
     str = strings.shift()
     if /\n/.test str
-      str = self.myCookie + "\n" + str
+      str = @myCookie + "\n" + str
     else
-      str = self.myCookie + " " + str
+      str = @myCookie + " " + str
     if str.length > 8096
       str = "** End of Message Truncated **\n" + str
       str = str[0...8096]
