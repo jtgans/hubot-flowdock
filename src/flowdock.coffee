@@ -22,6 +22,10 @@ class Flowdock extends Adapter
     return if strings.length == 0
     self = @
     str = strings.shift()
+    if /\n/.test str
+      str = self.myCookie + "\n" + str
+    else
+      str = self.myCookie + " " + str
     if str.length > 8096
       str = "** End of Message Truncated **\n" + str
       str = str[0...8096]
@@ -89,6 +93,13 @@ class Flowdock extends Adapter
   myId: (id) ->
     String(id) == String(@bot.userId)
 
+  myCookie: ->
+    ":" + @bot.userId + ":"
+
+  fromMe: (message) ->
+    cookieCheck = new RegExp(@myCookie)
+    cookieCheck.test message
+
   reconnect: (reason) ->
     @robot.logger.info("Reconnecting: #{reason}")
     @stream.end()
@@ -112,8 +123,11 @@ class Flowdock extends Adapter
       if @needsReconnect(message)
         @reconnect('Reloading flow list')
       return unless message.event in ['message', 'comment']
-      return if @myId(message.user)
       return if String(message.user) in @ignores
+
+      # prevent the bot from responding to itself
+      cookieCheck = new RegExp(@myCookie)
+      return if @fromMe message.content
 
       @robot.logger.debug 'Received message', message
 
