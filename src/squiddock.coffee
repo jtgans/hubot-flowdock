@@ -23,9 +23,9 @@ class Squiddock extends Adapter
     self = @
     str = strings.shift()
     if /\n/.test str
-      str = @myCookie + "\n" + str
+      str = @myCookie() + "\n" + str
     else
-      str = @myCookie + " " + str
+      str = @myCookie() + " " + str
     if str.length > 8096
       str = "** End of Message Truncated **\n" + str
       str = str[0...8096]
@@ -94,7 +94,7 @@ class Squiddock extends Adapter
     String(id) == String(@bot.userId)
 
   myCookie: ->
-    ":" + @bot.userId + ":"
+    ":" + String(@robot.name) + ":"
 
   fromMe: (message) ->
     cookieCheck = new RegExp(@myCookie)
@@ -124,10 +124,7 @@ class Squiddock extends Adapter
         @reconnect('Reloading flow list')
       return unless message.event in ['message', 'comment']
       return if String(message.user) in @ignores
-
-      # prevent the bot from responding to itself
-      cookieCheck = new RegExp(@myCookie)
-      return if @fromMe message.content
+      return if @fromMe(message.content)
 
       @robot.logger.debug 'Received message', message
 
